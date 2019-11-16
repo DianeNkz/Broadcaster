@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../CSS/landing.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    
+    <title>welcome to Broadcaster </title> 
+</head>
+
+<body>
+    <ul>
+    
+    <a href="#"><input type="image" src="../ASSETS/LOGO.PNG" name="logo"/></a>
+    <li>DON'T HAVE AN ACCOUNT ? <a href="../HTML/signup.html">SIGN UP</a> </li>   
+  </ul>
+
+<div class="container" >
+    <form  style="border:3px solid #ccc; border-radius:10px"autocomplete="off">
+  
+    <h1 style="text-align:center">Log In</h1>
+    <p style="text-align:center; font-weight:bold" >Sign in to continue to Broadcaster.</p>
+    <hr> 
+
+    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+
+    <input type="password" placeholder="Enter Password" name="psw" id="pswd" required>
+
+    <p class="option2" style="margin-left: 40%; font-weight:bold"> <a href="login">Forgot password? </a> </p>
+      <button type="submit" class="loginbtn" onclick="to_registered()">LOG IN</button>
+
+</form>
+
+</div>
+
+<div class="footer"><h2>Broadcaster features</h2> 
+    <div class="about"><h3>About corruption/intervention</h3><p style="color: white;font-size:18px"> You can report a corruption case or any issue that needs government intervention</p> </div>
+    <div class="newsletters"><h3>Get newsletters</h3><p style="color: white;font-size:18px">You can subscribe to daily or weekly newsletters so that you keep updated with news</p>  </div>
+    <div class="contactus"><h3>Contact us</h3><p style="color: white;font-size:18px">Contact: +250789013024 <br> Email: info@broadcaster.com <br>Social media:  <i class="fab fa-facebook-f"></i> <i class="fab fa-twitter"></i> <i class="fab fa-instagram"></i> </p>  </div>
+</div>
+
+<script type="text/javascript"> 
+function to_registered(){
+    var email= document.getElementById("email");
+    var password= document.getElementById("pswd");
+    if(email === "admin@gmail.com" && password === "admin123"){
+       location.href="admin.html"; 
+    }
+    else {
+        location.href="../HTML/registered.html "; 
+    }
+    
+}
+</script>
+</body>
+</html>
