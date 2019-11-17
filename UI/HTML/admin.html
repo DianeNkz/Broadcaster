@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../CSS/registered.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <title>Broadcaster </title>
+</head>
+
+<body>
+	
+        
+        
+
+  <ul>
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+    <a href="#"><input type="image" src="../ASSETS/LOGO.PNG" name="logo"/></a>
+    
+    <li ><a href=""><i class="fas fa-user"></i>&nbsp| ADMIN</a>
+        <ul> <li><button type="submit" onclick="to_landing()">LOG OUT</button></li></ul>
+    </li>
+     
+    <li><a href="#">DASHBOARD</a></li>
+    
+  </ul>  
+<!-- Create new case i.e red-flag/intervention-->	
+
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <form  style="border:1px solid #ccc ; border-radius:10px">
+  
+    <h1 style="text-align:center">CREATE A CASE</h1>
+    <p style="text-align:center;font-weight:bold" >Please fill in this form to create a case.</p>
+    <hr> 
+
+    <textarea name="case_title" id="ctitle" cols="130" rows="1" placeholder="Enter your title here."></textarea><br>
+    <SELECT>
+      <OPTION>SELECT A TYPE</OPTION>
+      <OPTION>corruption</OPTION>
+      <OPTION>intervetion</OPTION>
+
+    </SELECT><br><br>
+    <textarea name="case_descriptioon" id="descr" cols="130" rows="15" placeholder="  Write your description here"></textarea><br>
+    <button onclick="getLocation()" id="locationbtn">Add location</button>
+    <input type="file" name="pic" class="uploads"accept="file_extension|audio/*|video/*|image/*|media_type">
+
+    <div class="clearfix">
+      <button type="submit" onclick="cancel()" class="discardbtn" >DISCARD</button>
+      <button type="submit" class="savebtn" >SAVE </button>
+    </div>
+    
+  </div>
+  <script src="../JS/registered.js"></script>
+</form>
+  </div>
+
+</div>
+
+<!--Displaying all cases -->
+	<div >
+        <table class="cases" >
+           <tr style="height:50px">
+              <th>ID</th>
+              <th>Owner</th>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Type</th>
+              <th>Status/change status</th>
+              <th>Date/time created</th>
+              <th>Date/time status-changed</th>
+           </tr>
+
+            <tr style="height:50px">
+               <td>001</td>  
+               <td>Diane N</td> 
+               <td>corruption in Kabuye sector  </td>
+               <td>Executive of Kabuye sector has been brided by... in order to...</td> 
+               <td>Corruption </td>
+               <td><select name="statuses" id="selectId"> 
+                      <option > -- Update status --</option>
+                      <option id="Under-investigation" onclick="investigated()" >Under investigation</option>
+                      <option id="Rejected">Rejected</option>
+                      <option id="Resolved" >Resolved</option>
+                  </select>  </td>
+               <td ><script >document.write(Date()); </script> </td>
+               <td>Date status-changed</td> 
+           </tr>
+
+           <tr style="height:50px">
+               <td>002</td>  
+               <td>Diane N</td> 
+               <td>corruption in Kabuye sector  </td>
+               <td>Executive of Kabuye sector has been brided by... in order to...</td> 
+               <td>corruption</td>
+               <td><p id="stat"></p>
+                  <select name="statuses" id="selectId"> 
+                      <option > -- Update status --</option>
+                      <option id="Under-investigation" onclick="investigated()" >Under investigation</option>
+                      <option id="Rejected">Rejected</option>
+                      <option id="Resolved" >Resolved</option>
+                  </select>  
+               </td>
+               <td><script > document.write(Date()); </script> </td>
+               <td>Date status-changed</td> 
+           </tr>
+
+           <tr style="height:50px">
+               <td>003</td>  
+               <td>Diane N</td> 
+               <td>corruption in Kabuye sector  </td>
+               <td>Executive of Kabuye sector has been brided by... in order to...</td> 
+               <td>Intervention </td>
+               <td><select name="statuses" id="selectId"> 
+                      <option > -- Update status --</option>
+                      <option id="Under-investigation" onclick="investigated()" >Under investigation</option>
+                      <option id="Rejected">Rejected</option>
+                      <option id="Resolved" >Resolved</option>
+                  </select>   </td>
+               <td><script > document.write(Date()); </script> </td>
+               <td>Date status-changed</td> 
+           </tr>
+
+           <tr style="height:50px">
+               <td>004</td>  
+               <td>Diane D</td> 
+               <td>Road destructed by rain  </td>
+               <td>Road destructed by rain in Nyamasheke...</td> 
+               <td>Intervention </td>
+               <td>Resolved  <select name="statuses" id="selectId"> 
+                      <option > -- Update status --</option>
+                      <option id="Under-investigation" onclick="investigated()" >Under investigation</option>
+                      <option id="Rejected">Rejected</option>
+                      <option id="Resolved" >Resolved</option>
+                  </select>  </td>
+               <td><script > document.write(Date()); </script> </td>
+               <td>Date status-changed</td> 
+           </tr>
+        </table>    
+
+    </div>
+    <!-- geeting current locaion -->
+<script type="text/javascript">
+
+var x = document.getElementById("demo");
+var locationbtn = document.getElementById("locationbtn");
+var curr = document.getElementById("curr");
+curr.style.display = "none"
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  locationbtn.style.display = "none"
+  curr.style.display = "block"
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+
+}
+// when clicked, it should change to what was clicked 
+document.getElementById("Under-investigation").onclick = function() {investigated()};
+function investigated() {
+  
+  document.getElementById('stat').innerHTML = 'Under-investigation';
+}
+
+
+ function to_landing() {
+  location.href="../HTML/landing.html";
+}
+
+</script>
+
+</body>
+</html>
