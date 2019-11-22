@@ -34,7 +34,8 @@ import validateCase from '../Controllers/validateCase';
         });
     }
 
-    /* -- GETTING A NEW CASE -- */
+
+    /* 2-- GETTING A NEW CASE -- */
 
     allCases (req,res) {
         const { error } = (req.body);
@@ -49,7 +50,7 @@ import validateCase from '../Controllers/validateCase';
         res.send(cases);
     }
 
-    /* -- CREATING A SPECIFIC CASE -- */
+    /* 3-- CREATING A SPECIFIC CASE -- */
 
     specificCase(req,res) {
         const { error } = (req.body);
@@ -75,7 +76,7 @@ import validateCase from '../Controllers/validateCase';
 
     }
 
-    /* -- DELETING A  CASE -- */
+    /* 4-- DELETING A  CASE -- */
 
     deleteCase(req,res) {
         const { error } = (req.body);
@@ -108,7 +109,7 @@ import validateCase from '../Controllers/validateCase';
 
     }
 
-    /* -- EDITING A  CASE( @TITLE, @TYPE, @DESCRIPTION, @LOCATION) --  */
+    /* 5-- EDITING A  CASE( @TITLE, @TYPE, @DESCRIPTION, @LOCATION) --  */
 
     editContent(req,res) {
         
