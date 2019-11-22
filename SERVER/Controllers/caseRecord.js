@@ -33,14 +33,14 @@ import validateCase from '../Controllers/validateCase';
     }
 
     // updateCase(req,res) {
-    //     const { error } = validateCase(req.body);
+    //     const { error } = (req.body);
 
     //     if(error) return res.status(400).send(error.details[0].message);
         
     //     const casescreated= cases.find(c => c.id === parseInt(req.params.id));
     //     if(!casescreated) return res.status(404).send('The given id is not found');
 
-    //     c.title= req.body.title;
+        
     //     c.description = req.body.description;
 
     //     if(error) return res.status(400).send(error.details[0].message);
@@ -48,13 +48,14 @@ import validateCase from '../Controllers/validateCase';
     //     res.status(200).json(
     //         {
     //             status: 200, 
-    //             message: 'Article updated succesfully'
+    //             message: 'Article updated succesfully',
+    //             data:cases
     //          });
     
     // }
 
 
-    allCases (req,res){
+    allCases (req,res) {
         const { error } = (req.body);
         if(error) {
             res.status(400).json({
@@ -65,6 +66,36 @@ import validateCase from '../Controllers/validateCase';
         }
 
         res.send(cases);
+    }
+
+    specificCase(req,res) {
+        const { error } = (req.body);
+        if(error) {
+            res.status(400).json({
+                status: 400,
+                error: error.details[0].message
+            });
+            return ;
+        }
+
+
+        let one= cases.find(c => c.id === parseInt(req.params.id));
+        if(!one) {
+            res.status(404).json({
+                status: 401,
+                message: 'The given id is not found'
+            });
+            
+        }
+        else{
+            res.status(201).json(one);
+            }
+
+        //if(error) return res.status(400).send(error.details[0].message);
+
+        
+
+
     }
 
  }
