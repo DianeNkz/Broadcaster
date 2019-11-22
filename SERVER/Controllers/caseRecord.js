@@ -3,6 +3,8 @@ import cases from '../Models/cases';
 import validateCase from '../Controllers/validateCase';
 
 
+/* -- CREATING A NEW CASE -- */
+
  class casefunction {
      createCase (req,res)  {
         const { error } = validateCase(req.body);
@@ -11,7 +13,7 @@ import validateCase from '../Controllers/validateCase';
 
         var createdOn= new Date();
         
-        const id= cases.length +1 ;
+        const id= cases.length  ;
         const casescreated={
             id,
             createdOn,
@@ -32,28 +34,8 @@ import validateCase from '../Controllers/validateCase';
         });
     }
 
-    // updateCase(req,res) {
-    //     const { error } = (req.body);
 
-    //     if(error) return res.status(400).send(error.details[0].message);
-        
-    //     const casescreated= cases.find(c => c.id === parseInt(req.params.id));
-    //     if(!casescreated) return res.status(404).send('The given id is not found');
-
-        
-    //     c.description = req.body.description;
-
-    //     if(error) return res.status(400).send(error.details[0].message);
-
-    //     res.status(200).json(
-    //         {
-    //             status: 200, 
-    //             message: 'Article updated succesfully',
-    //             data:cases
-    //          });
-    
-    // }
-
+    /* 2-- GETTING A NEW CASE -- */
 
     allCases (req,res) {
         const { error } = (req.body);
@@ -68,6 +50,8 @@ import validateCase from '../Controllers/validateCase';
         res.send(cases);
     }
 
+    /* 3-- CREATING A SPECIFIC CASE -- */
+
     specificCase(req,res) {
         const { error } = (req.body);
         if(error) {
@@ -77,7 +61,6 @@ import validateCase from '../Controllers/validateCase';
             });
             return ;
         }
-
 
         let one= cases.find(item => item.id === parseInt(req.params.id));
         if(!one) {
@@ -93,6 +76,8 @@ import validateCase from '../Controllers/validateCase';
 
     }
 
+    /* 4-- DELETING A  CASE -- */
+
     deleteCase(req,res) {
         const { error } = (req.body);
         if(error) {
@@ -102,7 +87,6 @@ import validateCase from '../Controllers/validateCase';
             });
             return ;
         }
-
 
         let del= cases.find(item => item.id === parseInt(req.params.id));
         let index =cases.indexOf(del);
@@ -121,7 +105,45 @@ import validateCase from '../Controllers/validateCase';
                 message: 'a case has been deleted successfully',
                 data:cases
             });
-            }
+         }
+
+    }
+
+    /* 5-- EDITING A  CASE( @TITLE, @TYPE, @DESCRIPTION, @LOCATION) --  */
+
+    editContent(req,res) {
+        
+        const { error } = (req.body);
+
+        if(error) {
+            res.status(400).json({
+                status: 400,
+                error: error.details[0].message
+            });
+            return ;
+        }
+        const edit= cases.find(item => item.id === parseInt(req.params.id));
+        
+        if(!edit ) {
+            res.status(404).json({
+                status: 401,
+                message: 'The given id is not found'  
+            });
+            
+        }
+        else{
+          
+             edit.title= req.body.title;
+             edit.type= req.body.type;
+             edit.description= req.body.description;
+             edit.location=req.body.location;
+            
+            res.status(201).json({
+                status:201,
+                message: 'a case description has been edited successfully',
+                data:cases
+            });
+         }
 
     }
 
