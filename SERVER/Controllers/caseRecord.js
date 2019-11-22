@@ -1,16 +1,19 @@
 import express from 'express';
 import cases from '../Models/cases';
+import validateCase from '../Controllers/validateCase';
 
+
+/* -- CREATING A NEW CASE -- */
 
  class casefunction {
      createCase (req,res)  {
-        const { error } = (req.body);
+        const { error } = validateCase(req.body);
 
         if(error) return res.status(400).send(error.details[0].message);
 
         var createdOn= new Date();
         
-        const id= cases.length +1 ;
+        const id= cases.length  ;
         const casescreated={
             id,
             createdOn,
@@ -27,10 +30,121 @@ import cases from '../Models/cases';
         res.json({
             status: 201,
             message: 'A case created successfully',
+            data:cases
         });
     }
 
+    /* -- GETTING A NEW CASE -- */
 
+    allCases (req,res) {
+        const { error } = (req.body);
+        if(error) {
+            res.status(400).json({
+                status: 400,
+                error: error.details[0].message
+            });
+            return ;
+        }
+
+        res.send(cases);
+    }
+
+    /* -- CREATING A SPECIFIC CASE -- */
+
+    specificCase(req,res) {
+        const { error } = (req.body);
+        if(error) {
+            res.status(400).json({
+                status: 400,
+                error: error.details[0].message
+            });
+            return ;
+        }
+
+        let one= cases.find(item => item.id === parseInt(req.params.id));
+        if(!one) {
+            res.status(404).json({
+                status: 401,
+                message: 'The given id is not found'
+            });
+            
+        }
+        else{
+            res.status(201).json(one);
+            }
+
+    }
+
+    /* -- DELETING A  CASE -- */
+
+    deleteCase(req,res) {
+        const { error } = (req.body);
+        if(error) {
+            res.status(400).json({
+                status: 400,
+                error: error.details[0].message
+            });
+            return ;
+        }
+
+        let del= cases.find(item => item.id === parseInt(req.params.id));
+        let index =cases.indexOf(del);
+        if(!index) {
+            res.status(404).json({
+                status: 401,
+                message: 'The given id is not found'
+                
+            });
+            
+        }
+        else{
+            cases.splice(index,1)
+            res.status(201).json({
+                status:201,
+                message: 'a case has been deleted successfully',
+                data:cases
+            });
+         }
+
+    }
+
+    /* -- EDITING A  CASE( @TITLE, @TYPE, @DESCRIPTION, @LOCATION) --  */
+
+    editContent(req,res) {
+        
+        const { error } = (req.body);
+
+        if(error) {
+            res.status(400).json({
+                status: 400,
+                error: error.details[0].message
+            });
+            return ;
+        }
+        const edit= cases.find(item => item.id === parseInt(req.params.id));
+        
+        if(!edit ) {
+            res.status(404).json({
+                status: 401,
+                message: 'The given id is not found'  
+            });
+            
+        }
+        else{
+          
+             edit.title= req.body.title;
+             edit.type= req.body.type;
+             edit.description= req.body.description;
+             edit.location=req.body.location;
+            
+            res.status(201).json({
+                status:201,
+                message: 'a case description has been edited successfully',
+                data:cases
+            });
+         }
+
+    }
 
  }
 
