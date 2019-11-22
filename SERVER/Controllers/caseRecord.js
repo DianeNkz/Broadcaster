@@ -79,7 +79,7 @@ import validateCase from '../Controllers/validateCase';
         }
 
 
-        let one= cases.find(c => c.id === parseInt(req.params.id));
+        let one= cases.find(item => item.id === parseInt(req.params.id));
         if(!one) {
             res.status(404).json({
                 status: 401,
@@ -91,10 +91,37 @@ import validateCase from '../Controllers/validateCase';
             res.status(201).json(one);
             }
 
-        //if(error) return res.status(400).send(error.details[0].message);
+    }
 
-        
+    deleteCase(req,res) {
+        const { error } = (req.body);
+        if(error) {
+            res.status(400).json({
+                status: 400,
+                error: error.details[0].message
+            });
+            return ;
+        }
 
+
+        let del= cases.find(item => item.id === parseInt(req.params.id));
+        let index =cases.indexOf(del);
+        if(!index) {
+            res.status(404).json({
+                status: 401,
+                message: 'The given id is not found'
+                
+            });
+            
+        }
+        else{
+            cases.splice(index,1)
+            res.status(201).json({
+                status:201,
+                message: 'a case has been deleted successfully',
+                data:cases
+            });
+            }
 
     }
 
