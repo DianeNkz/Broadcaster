@@ -1,37 +1,46 @@
-//const express= from('express');
 import userSchema from '../Models/users';
 import  validateUser from  '../Controllers/validateUser';
-import jwt from 'jsonwebtoken';
+import bcryptjs from 'bcryptjs';
+import dotenv from 'dotenv'
 
-
+dotenv.config();
 
       const addUser = (req,res) =>  {
     const { error } = validateUser(req.body);
         
     if(error) return res.status(400).send(error.details[0].message);
-
-    // const userexist= ;
-    const id= userSchema.length+1;
+    const userfind= userSchema.find(item => item.email === req.body.email);
+     if(userfind){
+        res.status(400).json({
+           status:400,
+           message: 'User already exists'
+        });
+        
+      } else {
+    const password= bcryptjs.hashSync(req.body.password.trim(),10);
+    const id= userSchema.length;
 
     const userEntry = {
          id,
          firstname: req.body.firstname,
          lastname: req.body.lastname,
          email: req.body.email,
-         password: req.body.password,
-         repeatpassword: req.body.repeatpassword
+         password: password,
+         repeatpassword: password
         
        
     };
 
     userSchema.push(userEntry);
 
+ 
     res.status(201).json({
     status: 201, 
     message: 'user created succesfully',
-    //'UserIdentification':userSchema
- });
+    data:userSchema
     
+ });
+      }
     } 
  
 
