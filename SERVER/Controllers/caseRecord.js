@@ -1,9 +1,9 @@
-import express from 'express';
+
 import cases from '../Models/cases';
 import validateCase from '../Controllers/validateCase';
 
 
-/* -- CREATING A NEW CASE -- */
+/* 1-- CREATING A NEW CASE -- */
 
  class casefunction {
      createCase (req,res)  {
