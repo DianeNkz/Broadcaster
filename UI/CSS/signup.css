@@ -1,7 +1,7 @@
-/* * {box-sizing: border-box}*/
+
 
 * {box-sizing: border-box}
-/* Full-width input fields */
+
 
 ul {
 
@@ -44,7 +44,7 @@ margin-top: 8.5%;
   margin-left: 20%;
 }
 
-/* Add a background color when the inputs get focus */
+
 input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
   background-color: #ddd;
   outline: none;
@@ -80,13 +80,13 @@ label{
 
 
 
-/* Style the horizontal ruler */
+
 hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;
 }
 
-/* The Close Button (x) */
+
 .close {
   position: absolute;
   right: 35px;
@@ -102,7 +102,7 @@ hr {
   cursor: pointer;
 }
 
-/* Clear floats */
+
 .clearfix::after {
   content: "";
   clear: both;
@@ -114,7 +114,7 @@ hr {
   font-weight: bold;
 }
 
-/* Change styles for cancel button and signup button on extra small screens */
+
 @media screen and (max-width: 300px) {
   .cancelbtn, .signupbtn {
     width: 100%;
