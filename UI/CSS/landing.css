@@ -1,7 +1,6 @@
 
+
 * { box-sizing: border-box; }
-
-
 
 ul {
   display: flex;
@@ -85,7 +84,6 @@ padding-left: 20%;
 }
 
 .footer{
-/*display: flex;*/
 text-align: center;
 position: relative;
 margin-left: 20%;
@@ -142,6 +140,9 @@ margin-top: -20.3%;
   
   top: 100%;
 }
+
+
+
 
 
 
