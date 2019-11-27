@@ -24,16 +24,16 @@
 
 <div id="myModal" class="modal">
 
-  <!-- Modal content -->
+ 
   <div class="modal-content">
     <span class="close">&times;</span>
-    <form  style="border:1px solid #ccc ; border-radius:10px">
+    <form  style="border:1px solid #ccc ;  margin-left: 2%; border-radius:10px; font-family: 'Courier New', Courier, monospace;">
   
     <h1 style="text-align:center">CREATE A CASE</h1>
     <p style="text-align:center;font-weight:bold" >Please fill in this form to create a case.</p>
     <hr> 
 
-    <textarea name="case_title" id="ctitle" cols="130" rows="1" placeholder="Enter your title here."></textarea><br>
+    <input type="text" name="case_title" id="ctitle" cols="130" rows="1" placeholder="Enter your title here."><br> <br>
     <SELECT>
       <OPTION>SELECT A TYPE</OPTION>
       <OPTION>red-flag</OPTION>
@@ -178,7 +178,11 @@
 
     </div>
 
+<<<<<<< HEAD
+     
+=======
      <!-- view paticular -->
+>>>>>>> 0d58bb7bb7a6d8bf364dde10ae9d011dbef911cc
     
 
 
@@ -190,7 +194,7 @@ var locationbtn = document.getElementById("locationbtn");
 var map = document.getElementById("map");
 var curr = document.getElementById("curr");
 curr.style.display = "none"
-//map.style.display= "none"
+
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
