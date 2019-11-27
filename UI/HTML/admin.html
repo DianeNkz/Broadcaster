@@ -11,11 +11,8 @@
 
 <body>
 	
-        
-        
-
+  
   <ul>
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
     <a href="#"><input type="image" src="../ASSETS/LOGO.PNG" name="logo"/></a>
     
     <li ><a href=""><i class="fas fa-user"></i>&nbsp| ADMIN</a>
@@ -25,54 +22,43 @@
     <li><a href="#">DASHBOARD</a></li>
     
   </ul>  
-<!-- Create new case i.e red-flag/intervention-->	
 
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <form  style="border:1px solid #ccc ; border-radius:10px">
-  
-    <h1 style="text-align:center">CREATE A CASE</h1>
-    <p style="text-align:center;font-weight:bold" >Please fill in this form to create a case.</p>
-    <hr> 
-
-    <textarea name="case_title" id="ctitle" cols="130" rows="1" placeholder="Enter your title here."></textarea><br>
-    <SELECT>
-      <OPTION>SELECT A TYPE</OPTION>
-      <OPTION>corruption</OPTION>
-      <OPTION>intervetion</OPTION>
-
-    </SELECT><br><br>
-    <textarea name="case_descriptioon" id="descr" cols="130" rows="15" placeholder="  Write your description here"></textarea><br>
-    <button onclick="getLocation()" id="locationbtn">Add location</button>
-    <input type="file" name="pic" class="uploads"accept="file_extension|audio/*|video/*|image/*|media_type">
-
-    <div class="clearfix">
-      <button type="submit" onclick="cancel()" class="discardbtn" >DISCARD</button>
-      <button type="submit" class="savebtn" >SAVE </button>
-    </div>
-    
-  </div>
-  <script src="../JS/registered.js"></script>
-</form>
-  </div>
-
+  <div class="states">
+<div style="background-color: darkgray; widows: 300px;"> Draft : 1</div>
+<div style="background-color: dodgerblue; " >Under-investigation : 20 </div>
+<div style="background-color: firebrick;">Rejected : 4 </div>
+<div style="background-color: forestgreen;">Resolved : 15 </div>
 </div>
 
+<div class="viewing">
+    <label>View by</label>
+    <SELECT>
+        <OPTION>TYPE</OPTION>
+        <OPTION>red-flag</OPTION>
+        <OPTION>Intervention</OPTION>
+      </SELECT>
+  
+      <SELECT>
+        <OPTION>STATUS</OPTION>
+        <OPTION> draft </OPTION>
+        <OPTION>Under investigation</OPTION>
+        <OPTION>Rejected</OPTION>
+        <OPTION>Resolved</OPTION>
+      </SELECT>
+  
+  </div>
 <!--Displaying all cases -->
 	<div >
         <table class="cases" >
-           <tr style="height:50px">
+           <tr style="height:50px;background-color: burlywood;">
               <th>ID</th>
               <th>Owner</th>
               <th>Title</th>
               <th>Description</th>
               <th>Type</th>
               <th>Status/change status</th>
-              <th>Date/time created</th>
-              <th>Date/time status-changed</th>
+              <th><script > document.write(Date()); </script></th>
+              <th><script > document.write(Date()); </script></th>
            </tr>
 
             <tr style="height:50px">
@@ -88,7 +74,7 @@
                       <option id="Resolved" >Resolved</option>
                   </select>  </td>
                <td ><script >document.write(Date()); </script> </td>
-               <td>Date status-changed</td> 
+               <td><script > document.write(Date()); </script></td> 
            </tr>
 
            <tr style="height:50px">
@@ -106,7 +92,7 @@
                   </select>  
                </td>
                <td><script > document.write(Date()); </script> </td>
-               <td>Date status-changed</td> 
+               <td><script > document.write(Date()); </script></td> 
            </tr>
 
            <tr style="height:50px">
@@ -122,7 +108,7 @@
                       <option id="Resolved" >Resolved</option>
                   </select>   </td>
                <td><script > document.write(Date()); </script> </td>
-               <td>Date status-changed</td> 
+               <td><script > document.write(Date()); </script></td> 
            </tr>
 
            <tr style="height:50px">
@@ -138,8 +124,136 @@
                       <option id="Resolved" >Resolved</option>
                   </select>  </td>
                <td><script > document.write(Date()); </script> </td>
-               <td>Date status-changed</td> 
+               <td><script > document.write(Date()); </script></td> 
            </tr>
+
+           <tr style="height:50px">
+              <td>005</td>  
+              <td>Diane D</td> 
+              <td>Road destructed by rain  </td>
+              <td>Road destructed by rain in Nyamasheke...</td> 
+              <td>Intervention </td>
+              <td>Resolved  <select name="statuses" id="selectId"> 
+                     <option > -- Update status --</option>
+                     <option id="Under-investigation" onclick="investigated()" >Under investigation</option>
+                     <option id="Rejected">Rejected</option>
+                     <option id="Resolved" >Resolved</option>
+                 </select>  </td>
+              <td><script > document.write(Date()); </script> </td>
+              <td><script > document.write(Date()); </script></td> 
+          </tr>
+
+          <tr style="height:50px">
+              <td>006</td>  
+              <td>Diane D</td> 
+              <td>Road destructed by rain  </td>
+              <td>Road destructed by rain in Nyamasheke...</td> 
+              <td>Intervention </td>
+              <td>Resolved  <select name="statuses" id="selectId"> 
+                     <option > -- Update status --</option>
+                     <option id="Under-investigation" onclick="investigated()" >Under investigation</option>
+                     <option id="Rejected">Rejected</option>
+                     <option id="Resolved" >Resolved</option>
+                 </select>  </td>
+              <td><script > document.write(Date()); </script> </td>
+              <td><script > document.write(Date()); </script></td> 
+          </tr>
+
+          <tr style="height:50px">
+              <td>007</td>  
+              <td>Diane D</td> 
+              <td>Road destructed by rain  </td>
+              <td>Road destructed by rain in Nyamasheke...</td> 
+              <td>Intervention </td>
+              <td>Resolved  <select name="statuses" id="selectId"> 
+                     <option > -- Update status --</option>
+                     <option id="Under-investigation" onclick="investigated()" >Under investigation</option>
+                     <option id="Rejected">Rejected</option>
+                     <option id="Resolved" >Resolved</option>
+                 </select>  </td>
+              <td><script > document.write(Date()); </script> </td>
+              <td><script > document.write(Date()); </script></td> 
+          </tr>
+
+          <tr style="height:50px">
+              <td>008</td>  
+              <td>Diane D</td> 
+              <td>Road destructed by rain  </td>
+              <td>Road destructed by rain in Nyamasheke...</td> 
+              <td>Intervention </td>
+              <td>Resolved  <select name="statuses" id="selectId"> 
+                     <option > -- Update status --</option>
+                     <option id="Under-investigation" onclick="investigated()" >Under investigation</option>
+                     <option id="Rejected">Rejected</option>
+                     <option id="Resolved" >Resolved</option>
+                 </select>  </td>
+              <td><script > document.write(Date()); </script> </td>
+              <td><script > document.write(Date()); </script></td> 
+          </tr>
+
+          <tr style="height:50px">
+              <td>009</td>  
+              <td>Diane D</td> 
+              <td>Road destructed by rain  </td>
+              <td>Road destructed by rain in Nyamasheke...</td> 
+              <td>Intervention </td>
+              <td>Resolved  <select name="statuses" id="selectId"> 
+                     <option > -- Update status --</option>
+                     <option id="Under-investigation" onclick="investigated()" >Under investigation</option>
+                     <option id="Rejected">Rejected</option>
+                     <option id="Resolved" >Resolved</option>
+                 </select>  </td>
+              <td><script > document.write(Date()); </script> </td>
+              <td><script > document.write(Date()); </script></td> 
+          </tr>
+
+          <tr style="height:50px">
+              <td>010</td>  
+              <td>Diane D</td> 
+              <td>Road destructed by rain  </td>
+              <td>Road destructed by rain in Nyamasheke...</td> 
+              <td>Intervention </td>
+              <td>Resolved  <select name="statuses" id="selectId"> 
+                     <option > -- Update status --</option>
+                     <option id="Under-investigation" onclick="investigated()" >Under investigation</option>
+                     <option id="Rejected">Rejected</option>
+                     <option id="Resolved" >Resolved</option>
+                 </select>  </td>
+              <td><script > document.write(Date()); </script> </td>
+              <td><script > document.write(Date()); </script></td> 
+          </tr>
+
+          <tr style="height:50px">
+              <td>011</td>  
+              <td>Diane D</td> 
+              <td>Road destructed by rain  </td>
+              <td>Road destructed by rain in Nyamasheke...</td> 
+              <td>Intervention </td>
+              <td>Resolved  <select name="statuses" id="selectId"> 
+                     <option > -- Update status --</option>
+                     <option id="Under-investigation" onclick="investigated()" >Under investigation</option>
+                     <option id="Rejected">Rejected</option>
+                     <option id="Resolved" >Resolved</option>
+                 </select>  </td>
+              <td><script > document.write(Date()); </script> </td>
+              <td><script > document.write(Date()); </script></td> 
+          </tr>
+
+          <tr style="height:50px">
+              <td>012</td>  
+              <td>Diane D</td> 
+              <td>Road destructed by rain  </td>
+              <td>Road destructed by rain in Nyamasheke...</td> 
+              <td>Intervention </td>
+              <td>Resolved  <select name="statuses" id="selectId"> 
+                     <option > -- Update status --</option>
+                     <option id="Under-investigation" onclick="investigated()" >Under investigation</option>
+                     <option id="Rejected">Rejected</option>
+                     <option id="Resolved" >Resolved</option>
+                 </select>  </td>
+              <td><script > document.write(Date()); </script> </td>
+              <td><script > document.write(Date()); </script></td> 
+          </tr>
         </table>    
 
     </div>
