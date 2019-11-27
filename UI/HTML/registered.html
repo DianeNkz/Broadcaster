@@ -11,7 +11,6 @@
 
 <body>
   <ul>
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
     <a href="#"><input type="image" src="../ASSETS/LOGO.PNG" name="logo"/></a>
     
     <li ><a href=""><i class="fas fa-user"></i>&nbsp| Account Name</a>
@@ -25,19 +24,19 @@
 
 <div id="myModal" class="modal">
 
-  <!-- Modal content -->
+ 
   <div class="modal-content">
     <span class="close">&times;</span>
-    <form  style="border:1px solid #ccc ; border-radius:10px">
+    <form  style="border:1px solid #ccc ;  margin-left: 2%; border-radius:10px; font-family: 'Courier New', Courier, monospace;">
   
     <h1 style="text-align:center">CREATE A CASE</h1>
     <p style="text-align:center;font-weight:bold" >Please fill in this form to create a case.</p>
     <hr> 
 
-    <textarea name="case_title" id="ctitle" cols="130" rows="1" placeholder="Enter your title here."></textarea><br>
+    <input type="text" name="case_title" id="ctitle" cols="130" rows="1" placeholder="Enter your title here."><br> <br>
     <SELECT>
       <OPTION>SELECT A TYPE</OPTION>
-      <OPTION>corruption</OPTION>
+      <OPTION>red-flag</OPTION>
       <OPTION>intervetion</OPTION>
 
     </SELECT>
@@ -68,7 +67,7 @@
 
     <SELECT>
       <OPTION>STATUS</OPTION>
-      <OPTION> -- </OPTION>
+      <OPTION> draft </OPTION>
       <OPTION>Under investigation</OPTION>
       <OPTION>Rejected</OPTION>
       <OPTION>Resolved</OPTION>
@@ -80,105 +79,110 @@
 	<div class="table_cases">
         <table class="cases">
            <tr style="height:50px">
-              <th>Image</th>
-              <th>ID</th>
-              <th>Description</th>
+              
+              <th>Case ID</th>
+              <th>Title</th>
               <th>Type</th>
               <th>Status</th>
            </tr>
 
             <tr style="height:50px" >
-               <td><img src="../ASSETS/plus.PNG"></td>  
+               
                <td>001</td> 
-               <td id="text" >I want to report corruption in land sector </td>
-               <td>corruption</td> 
-               <td>-- </td>
+               <td id="text" ><a href="">I want to report corruption in land sectors</a> </td>
+               <td>red-flag</td> 
+               <td>draft </td>
                <th><div class="tooltip"><i class="fas fa-edit" onclick="editing()" ></i> <span class="tooltiptext">Edit your case </span></div></th>
-               <td><button onclick="getLocation()" id="locationbtn">Add location</button>  &nbsp <button id="map"><a href="https://www.google.com/maps/@-1.967548,30.0549678,15z" style="text-decoration:none; color:black">View map</a></button><label id="curr" style="font-size:17px; font-weight:bold">Current location</label >  <p id="demo"></p> </td>
+               <td><button onclick="getLocation()" id="locationbtn">Add location</button>   </td>
                <th><div class="tooltip"><i class="far fa-trash-alt" style="color:red"></i><span class="tooltiptext">Delete your case </span></div></th> 
            </tr>
 
            <tr style="height:50px" >
-               <td>ggg</td>  
+                 
                <td>002</td> 
                <td>I want to address an issue to ministry of justice,...  </td>
                <td>intervention</td> 
-               <td>-- </td>
+               <td>draft</td>
                <th><div class="tooltip"><i class="fas fa-edit" onclick="editing()" ></i> <span class="tooltiptext">Edit your case </span></div></th>
-               <td>Add location</td>
+               <td><button onclick="getLocation()" id="locationbtn">Add location</button>  </td>
                <th><div class="tooltip"><i class="far fa-trash-alt" style="color:red"></i><span class="tooltiptext">Delete your case </span></div></th> 
            </tr>
 
             <tr style="height:50px" >
-               <td>ggg</td>  
-               <td>002</td> 
+                 
+               <td>003</td> 
                <td>I want to address an issue to ministry of justice,...  </td>
                <td>intervention</td> 
-               <td>-- </td>
+               <td>under-investigation </td>
                <th><div class="tooltip"><i class="fas fa-edit" ></i> <span class="tooltiptext">Edit your case </span></div></th>
-               <td>Add location</td>
+               <td><button onclick="getLocation()" id="locationbtn">Add location</button>   </td>
                <th><div class="tooltip"><i class="far fa-trash-alt" style="color:red"></i><span class="tooltiptext">Delete your case </span></div></th> 
            </tr>
 
             <tr style="height:50px">
-               <td>ggg</td>  
-               <td>002</td> 
+                
+               <td>004</td> 
                <td>I want to address an issue to ministry of justice,...  </td>
                <td>intervention</td> 
-               <td>-- </td>
+               <td>rejected </td>
                <th><div class="tooltip"><i class="fas fa-edit" ></i> <span class="tooltiptext">Edit your case </span></div></th>
-               <td>Add location</td>
+               <td><button onclick="getLocation()" id="locationbtn">Add location</button>   </td>
                <th><div class="tooltip"><i class="far fa-trash-alt" style="color:red"></i><span class="tooltiptext">Delete your case </span></div></th> 
            </tr>
 
             <tr style="height:50px" >
-               <td>ggg</td>  
-               <td>002</td> 
+                
+               <td>005</td> 
                <td>I want to address an issue to ministry of justice,...  </td>
                <td>intervention</td> 
-               <td>-- </td>
+               <td>rejected </td>
                <th><div class="tooltip"><i class="fas fa-edit" ></i> <span class="tooltiptext">Edit your case </span></div></th>
-               <td>Add location</td>
+               <td><button onclick="getLocation()" id="locationbtn">Add location</button>   </td>
                <th><div class="tooltip"><i class="far fa-trash-alt" style="color:red"></i><span class="tooltiptext">Delete your case </span></div></th> 
            </tr>
 
             <tr style="height:50px">
-               <td>ggg</td>  
-               <td>002</td> 
+                 
+               <td>005</td> 
                <td>I want to address an issue to ministry of justice,...  </td>
-               <td>intervention</td> 
-               <td>-- </td>
+               <td>red-flag</td> 
+               <td>resolved </td>
                <th><div class="tooltip"><i class="fas fa-edit" ></i> <span class="tooltiptext">Edit your case </span></div></th>
-               <td>Add location</td>
+               <td><button onclick="getLocation()" id="locationbtn">Add location</button>  </td>
                <th><div class="tooltip"><i class="far fa-trash-alt" style="color:red"></i><span class="tooltiptext">Delete your case </span></div></th> 
            </tr>
 
             <tr style="height:50px">
-               <td>ggg</td>  
-               <td>002</td> 
+                 
+               <td>006</td> 
                <td>I want to address an issue to ministry of justice,...  </td>
                <td>intervention</td> 
-               <td>-- </td>
+               <td>draft </td>
                <th><div class="tooltip"><i class="fas fa-edit" ></i> <span class="tooltiptext">Edit your case </span></div></th>
-               <td>Add location</td>
+               <td><button onclick="getLocation()" id="locationbtn">Add location</button>   </td>
                <th><div class="tooltip"><i class="far fa-trash-alt" style="color:red"></i><span class="tooltiptext">Delete your case </span></div></th> 
            </tr>
 
             <tr style="height:50px">
-               <td>ggg</td>  
-               <td>002</td> 
+                 
+               <td>007</td> 
                <td>I want to address an issue to ministry of justice,...  </td>
-               <td>intervention</td> 
-               <td>-- </td>
+               <td>red-flag</td> 
+               <td>under-investigation </td>
                <th><div class="tooltip"><i class="fas fa-edit" ></i> <span class="tooltiptext">Edit your case </span></div></th>
-               <td>Add location</td>
+               <td><button onclick="getLocation()" id="locationbtn">Add location</button>   </td>
                <th><div class="tooltip"><i class="far fa-trash-alt" style="color:red"></i><span class="tooltiptext">Delete your case </span></div></th> 
            </tr>
 
         </table>    
 
     </div>
-    <!-- geeting current locaion -->
+
+     
+    
+
+
+    <!-- getting current locaion -->
 <script type="text/javascript">
 
 var x = document.getElementById("demo");
@@ -186,7 +190,7 @@ var locationbtn = document.getElementById("locationbtn");
 var map = document.getElementById("map");
 var curr = document.getElementById("curr");
 curr.style.display = "none"
-//map.style.display= "none"
+
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
@@ -198,7 +202,7 @@ function getLocation() {
 function showPosition(position) {
   locationbtn.style.display = "none"
   curr.style.display = "block"
-  //map.style.display= "block"
+  map.style.display= "block"
   x.innerHTML = "Latitude: " + position.coords.latitude + 
   "<br>Longitude: " + position.coords.longitude;
 
@@ -207,18 +211,7 @@ function showPosition(position) {
 </script>
 
 <script>
-var editing  = false; 
- function editing(){
 
-
-if (document.getElementById && document.createElement)
- {  
-  var butt = document.createElement('BUTTON');  
-  var buttext = document.createTextNode('Save'); 
-  butt.appendChild(buttext);
-  butt.onclick = saveEdit; 
-   }
- }
 
 
  function to_landing() {
