@@ -1,4 +1,5 @@
 
+
 * { box-sizing: border-box; }
 
 ul {
@@ -155,7 +156,9 @@ margin-top: -20.3%;
   text-align:center;
 }
 
+
 #titleit{
   text-align:center; 
   font-weight:bold;
 }
+
