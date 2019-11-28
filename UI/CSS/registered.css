@@ -223,3 +223,22 @@ table, th, td {
 } 
 
 
+#draft {
+ background-color: darkgray; 
+}
+
+#Under-investigation {
+  background-color: dodgerblue; 
+}
+
+#rejected{
+ background-color: firebrick;
+}
+
+#resolved{
+  background-color: forestgreen;
+}
+
+#headers{
+  height:50px;
+}

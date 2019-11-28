@@ -1,8 +1,6 @@
 
 * { box-sizing: border-box; }
 
-
-
 ul {
   display: flex;
   list-style-type: none;
@@ -81,11 +79,11 @@ margin-top: 8.5%;
 .option2{
 float: left;
 padding-left: 20%;
-
+margin-left: 40%; 
+font-weight:bold;
 }
 
 .footer{
-
 text-align: center;
 position: relative;
 margin-left: 20%;
@@ -143,5 +141,20 @@ margin-top: -20.3%;
   top: 100%;
 }
 
+#front {
+  width: 60%;
+}
 
+#formit{
+  border:3px solid #ccc; 
+  border-radius:10px;
+}
 
+#headit{
+  text-align:center;
+}
+
+#titleit{
+  text-align:center; 
+  font-weight:bold;
+}
