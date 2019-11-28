@@ -1,11 +1,16 @@
 language: node_js
 node_js:
-   "stable"
+  - "stable"
+  
+  before_script:
+ - npm install
+ 
 script: 
-  npm run coverage
-
-notifications:
-  email: fase
+  - npm run coverage
 
   after_success:
-  npm run coverage
+ - npm run coverage
+  
+
+
+
