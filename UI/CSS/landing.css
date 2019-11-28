@@ -1,40 +1,33 @@
 
-* { box-sizing: border-box; }
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
 
-.topnav .icon {
-  display: none;
-}
+* { box-sizing: border-box; }
 
 ul {
-
+  display: flex;
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #4CAF50;
 }
-
-li {
-  display: inline-block;
-  
-  padding: 20px 15%;
+.Nav{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 5fr 5fr;
+}
+li  {
+  padding: 20px 20%;
   color: white;
   font-weight: bold;
 }
-li a{
+li  a{
 	text-decoration: none;
-	color:#111;
+  color:#111;
 }
-
+li  a:hover{
+  color: rgb(136, 103, 103);
+  font-size: 17px;
+}
  input[type=text], input[type=password] {
   width: 60%;
   padding: 15px;
@@ -119,3 +112,37 @@ background: #3366cc;
 margin-left: 48%;
 margin-top: -20.3%;
 }
+
+
+.get_started {
+  width: 100%; 
+  
+} 
+.case {
+  position: absolute;
+  left: 70%;
+  top: 50%;
+  transform: translate(-20%, -70%);
+}
+.go{
+  background-color: #4CAF50;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 1px solid #111;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9; font-size: 20px;
+  font-weight: 1000;
+  margin-left: 2%;
+  position: absolute;
+  
+  top: 100%;
+}
+
+
+
+
+
+
