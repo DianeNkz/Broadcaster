@@ -80,7 +80,8 @@ margin-top: 8.5%;
 .option2{
 float: left;
 padding-left: 20%;
-
+margin-left: 40%; 
+font-weight:bold;
 }
 
 .footer{
@@ -95,6 +96,7 @@ height: 200px;
 background: #3366cc;
 display: block;
 }
+
 
 .newsletters{
 width: 22%;
@@ -141,8 +143,22 @@ margin-top: -20.3%;
   top: 100%;
 }
 
+#front {
+  width: 60%;
+}
+
+#formit{
+  border:3px solid #ccc; 
+  border-radius:10px;
+}
+
+#headit{
+  text-align:center;
+}
 
 
-
-
+#titleit{
+  text-align:center; 
+  font-weight:bold;
+}
 

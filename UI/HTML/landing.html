@@ -20,23 +20,22 @@
   </ul>
 
 <div class="container" >
-    <form  style="border:3px solid #ccc; border-radius:10px"autocomplete="off">
+    <form  autocomplete="off" id="formit">
   
-    <h1 style="text-align:center">Log In</h1>
-    <p style="text-align:center; font-weight:bold" >Sign in to continue to Broadcaster.</p>
+    <h1 id="headit">Log In</h1>
+    <p id="titleit" >Sign in to continue to Broadcaster.</p>
     <hr> 
 
     <input type="text" placeholder="Enter Email" name="email" id="email" required>
 
     <input type="password" placeholder="Enter Password" name="psw" id="pswd" required>
 
-    <p class="option2" style="margin-left: 40%; font-weight:bold"> <a href="login">Forgot password? </a> </p>
+    <p class="option2" > <a href="login">Forgot password? </a> </p>
       <button type="submit" class="loginbtn" onclick="to_registered()">LOG IN</button>
 
 </form>
 
 </div>
-
 
 <script type="text/javascript"> 
 function to_registered(){
