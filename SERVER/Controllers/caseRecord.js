@@ -35,7 +35,7 @@ import validateCase from '../Controllers/validateCase';
     }
 
 
-    /* 2-- GETTING A NEW CASE -- */
+    /* 2-- GETTING ALL CASE -- */
 
     allCases (req,res) {
         const { error } = (req.body);
@@ -65,7 +65,7 @@ import validateCase from '../Controllers/validateCase';
         let one= cases.find(item => item.id === parseInt(req.params.id));
         if(!one) {
             res.status(404).json({
-                status: 401,
+                status: 404,
                 message: 'The given id is not found'
             });
             
@@ -91,7 +91,7 @@ import validateCase from '../Controllers/validateCase';
         let del= cases.find(item => item.id === parseInt(req.params.id));
         let index =cases.indexOf(del);
         if(!index) {
-            res.status(404).json({
+            res.status(401).json({
                 status: 401,
                 message: 'The given id is not found'
                 

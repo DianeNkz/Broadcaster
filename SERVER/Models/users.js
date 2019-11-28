@@ -3,9 +3,10 @@ const userSchema = [
     id: Number,
     firstname: String,
     lastname: String,
+    phone: String,
     email: String,
     password: String,
-    repeatpassword: String,
+    
     
  }
 ] ;

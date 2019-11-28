@@ -1,5 +1,6 @@
 import userSchema from '../Models/users';
-import  validateUser from  '../Controllers/validateUser';
+//import  validateUser from  '../Controllers/validateUser';
+import validateUser from '../Controllers/validateUser';
 import bcryptjs from 'bcryptjs';
 import dotenv from 'dotenv'
 
@@ -8,11 +9,11 @@ dotenv.config();
       const addUser = (req,res) =>  {
     const { error } = validateUser(req.body);
         
-    if(error) return res.status(400).send(error.details[0].message);
+    //if(error) return res.status(400).send(error.details[0].message);
     const userfind= userSchema.find(item => item.email === req.body.email);
      if(userfind){
-        res.status(400).json({
-           status:400,
+        res.status(409).json({
+           status:409,
            message: 'User already exists'
         });
         
@@ -24,11 +25,10 @@ dotenv.config();
          id,
          firstname: req.body.firstname,
          lastname: req.body.lastname,
+         phone: req.body.phone,
          email: req.body.email,
-         password: password,
-         repeatpassword: password
-        
-       
+         password: password
+ 
     };
 
     userSchema.push(userEntry);
