@@ -50,7 +50,7 @@ const login= (req,res)=> {
 
         res.status(200).json({
             status: 200, 
-            message: ' logged in successfully',
+            message: 'logged in successfully',
             token: token
         });
 

@@ -4,8 +4,8 @@ import joi from 'joi';
 
 const validateCase= (cases) => {
     const validation = {
-        id: joi.number().required(),
-        createdOn: joi.date().required(),
+        
+        createdOn: joi.date(),
         createdBy: joi.number().required(),
         title : joi.string().required(),
         type : joi.string().required(),
