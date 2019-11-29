@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../CSS/registered.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <title>Broadcaster </title>
+</head>
+
+<body>
+  <ul>
+    <a href="#"><input type="image" src="../ASSETS/LOGO.PNG" name="logo"/></a>
+    
+    <li ><a href=""><i class="fas fa-user"></i>&nbsp| Account Name</a>
+        <ul> <li><button type="submit" onclick="to_landing()">LOG OUT</button></li></ul>
+    </li>
+    <li><button class="adding" id="createnew"><i class="fas fa-plus" ></i></button></li>   
+    <li><a href="#">DASHBOARD</a></li>
+    
+  </ul>  
+<!-- Create new case i.e red-flag/intervention-->	
+
+<div id="myModal" class="modal">
+
+ 
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <form  style="border:1px solid #ccc ;  margin-left: 2%; border-radius:10px; font-family: 'Courier New', Courier, monospace;">
+  
+    <h1 style="text-align:center">CREATE A CASE</h1>
+    <p style="text-align:center;font-weight:bold" >Please fill in this form to create a case.</p>
+    <hr> 
+
+
+    <input type="text" name="case_title" id="ctitle" cols="130" rows="1" placeholder="Enter your title here."><br> <br>
+    <SELECT>
+      <OPTION>SELECT A TYPE</OPTION>
+      <OPTION>red-flag</OPTION>
+      <OPTION>intervetion</OPTION>
+
+    </SELECT>
+        <br><br>
+    <textarea name="case_descriptioon" id="descr" cols="130" rows="15" placeholder="  Write your description here"></textarea><br>
+    <button onclick="getLocation()" id="locationbtn">Add location</button>
+    <input type="file" name="pic" class="uploads"accept="file_extension|audio/*|video/*|image/*|media_type">
+
+    <div class="clearfix">
+      <button type="submit" onclick="cancel()" class="discardbtn" >DISCARD</button>
+      <button type="submit" class="savebtn" >SAVE </button>
+    </div>
+    
+  </div>
+  <script src="../JS/registered.js"></script>
+</form>
+  </div>
+
+</div>
+
+<div class="viewing">
+  <label>View by</label>
+  <SELECT>
+      <OPTION>TYPE</OPTION>
+      <OPTION>red-flag</OPTION>
+      <OPTION>Intervention</OPTION>
+    </SELECT>
+
+    <SELECT>
+      <OPTION>STATUS</OPTION>
+      <OPTION> draft </OPTION>
+      <OPTION>Under investigation</OPTION>
+      <OPTION>Rejected</OPTION>
+      <OPTION>Resolved</OPTION>
+    </SELECT>
+
+</div>
+
+<!--Displaying all cases -->
+	<div class="table_cases">
+        <table class="cases">
+           <tr id="headers">
+              
+              <th>Case ID</th>
+              <th>Title</th>
+              <th>Type</th>
+              <th>Status</th>
+           </tr>
+
+            <tr id="headers" >
+               
+               <td>001</td> 
+               <td id="text" ><a href="">I want to report corruption in land sectors</a> </td>
+               <td>red-flag</td> 
+               <td>draft </td>
+               <th><div class="tooltip"><i class="fas fa-edit" onclick="editing()" ></i> <span class="tooltiptext">Edit your case </span></div></th>
+               <td><button onclick="getLocation()" id="locationbtn">Add location</button>   </td>
+               <th><div class="tooltip"><i class="far fa-trash-alt" style="color:red"></i><span class="tooltiptext">Delete your case </span></div></th> 
+           </tr>
+
+           <tr id="headers" >
+                 
+               <td>002</td> 
+               <td>I want to address an issue to ministry of justice,...  </td>
+               <td>intervention</td> 
+               <td>draft</td>
+               <th><div class="tooltip"><i class="fas fa-edit" onclick="editing()" ></i> <span class="tooltiptext">Edit your case </span></div></th>
+               <td><button onclick="getLocation()" id="locationbtn">Add location</button>  </td>
+               <th><div class="tooltip"><i class="far fa-trash-alt" style="color:red"></i><span class="tooltiptext">Delete your case </span></div></th> 
+           </tr>
+
+            <tr id="headers" >
+                 
+               <td>003</td> 
+               <td>I want to address an issue to ministry of justice,...  </td>
+               <td>intervention</td> 
+               <td>under-investigation </td>
+               <th><div class="tooltip"><i class="fas fa-edit" ></i> <span class="tooltiptext">Edit your case </span></div></th>
+               <td><button onclick="getLocation()" id="locationbtn">Add location</button>   </td>
+               <th><div class="tooltip"><i class="far fa-trash-alt" style="color:red"></i><span class="tooltiptext">Delete your case </span></div></th> 
+           </tr>
+
+            <tr id="headers">
+                
+               <td>004</td> 
+               <td>I want to address an issue to ministry of justice,...  </td>
+               <td>intervention</td> 
+               <td>rejected </td>
+               <th><div class="tooltip"><i class="fas fa-edit" ></i> <span class="tooltiptext">Edit your case </span></div></th>
+               <td><button onclick="getLocation()" id="locationbtn">Add location</button>   </td>
+               <th><div class="tooltip"><i class="far fa-trash-alt" style="color:red"></i><span class="tooltiptext">Delete your case </span></div></th> 
+           </tr>
+
+            <tr id="headers" >
+                
+               <td>005</td> 
+               <td>I want to address an issue to ministry of justice,...  </td>
+               <td>intervention</td> 
+               <td>rejected </td>
+               <th><div class="tooltip"><i class="fas fa-edit" ></i> <span class="tooltiptext">Edit your case </span></div></th>
+               <td><button onclick="getLocation()" id="locationbtn">Add location</button>   </td>
+               <th><div class="tooltip"><i class="far fa-trash-alt" style="color:red"></i><span class="tooltiptext">Delete your case </span></div></th> 
+           </tr>
+
+            <tr id="headers">
+                 
+               <td>005</td> 
+               <td>I want to address an issue to ministry of justice,...  </td>
+               <td>red-flag</td> 
+               <td>resolved </td>
+               <th><div class="tooltip"><i class="fas fa-edit" ></i> <span class="tooltiptext">Edit your case </span></div></th>
+               <td><button onclick="getLocation()" id="locationbtn">Add location</button>  </td>
+               <th><div class="tooltip"><i class="far fa-trash-alt" style="color:red"></i><span class="tooltiptext">Delete your case </span></div></th> 
+           </tr>
+
+            <tr id="headers">
+                 
+               <td>006</td> 
+               <td>I want to address an issue to ministry of justice,...  </td>
+               <td>intervention</td> 
+               <td>draft </td>
+               <th><div class="tooltip"><i class="fas fa-edit" ></i> <span class="tooltiptext">Edit your case </span></div></th>
+               <td><button onclick="getLocation()" id="locationbtn">Add location</button>   </td>
+               <th><div class="tooltip"><i class="far fa-trash-alt" style="color:red"></i><span class="tooltiptext">Delete your case </span></div></th> 
+           </tr>
+
+            <tr id="headers">
+                 
+               <td>007</td> 
+               <td>I want to address an issue to ministry of justice,...  </td>
+               <td>red-flag</td> 
+               <td>under-investigation </td>
+               <th><div class="tooltip"><i class="fas fa-edit" ></i> <span class="tooltiptext">Edit your case </span></div></th>
+               <td><button onclick="getLocation()" id="locationbtn">Add location</button>   </td>
+               <th><div class="tooltip"><i class="far fa-trash-alt" style="color:red"></i><span class="tooltiptext">Delete your case </span></div></th> 
+           </tr>
+
+        </table>    
+
+    </div>
+
+
+
+    <!-- getting current locaion -->
+<script type="text/javascript">
+
+var x = document.getElementById("demo");
+var locationbtn = document.getElementById("locationbtn");
+var map = document.getElementById("map");
+var curr = document.getElementById("curr");
+curr.style.display = "none"
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  locationbtn.style.display = "none"
+  curr.style.display = "block"
+  map.style.display= "block"
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+
+}
+
+</script>
+
+<script>
+
+
+
+ function to_landing() {
+  location.href="../HTML/landing.html";
+}
+</script>
+</body>
+</html>

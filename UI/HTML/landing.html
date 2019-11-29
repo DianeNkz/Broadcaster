@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../CSS/landing.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    
+    <title>welcome to Broadcaster </title> 
+</head>
+
+<body>
+    <ul>
+    
+    <div class="Nav">
+            <div><a href="#"><input type="image" src="../ASSETS/LOGO.PNG" name="logo"/></a></div>
+            <div><li>DON'T HAVE AN ACCOUNT ?  <a href="../HTML/signup.html">SIGN UP</a> </li> </div>  
+    </div>
+  </ul>
+
+<div class="container" >
+    <form  autocomplete="off" id="formit">
+  
+    <h1 id="headit">Log In</h1>
+    <p id="titleit" >Sign in to continue to Broadcaster.</p>
+    <hr> 
+
+    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+
+    <input type="password" placeholder="Enter Password" name="psw" id="pswd" required>
+
+    <p class="option2" > <a href="login">Forgot password? </a> </p>
+      <button type="submit" class="loginbtn" onclick="to_registered()">LOG IN</button>
+
+</form>
+
+</div>
+
+<script type="text/javascript"> 
+function to_registered(){
+    var email= document.getElementById("email");
+    var password= document.getElementById("pswd");
+    if(email === "admin@gmail.com" && password === "admin123"){
+       location.href="admin.html"; 
+    }
+    else {
+        location.href="../HTML/registered.html "; 
+    }
+    
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../CSS/signup.css">
+    <title>Welcome to Broadcaster </title>
+</head>
+
+<body>
+	<ul>
+    
+    <a href="#"><input type="image" src="../ASSETS/LOGO.PNG" name="logo"/></a>
+    <li>ALREADY A MEMBER ? <a href="../HTML/landing.html">LOG IN</a> </li>   
+  </ul>
+
+	
+    <div class="container">
+    <form  style="border:1px solid #ccc ; border-radius:10px" autocomplete="off">
+  
+    <h1 style="text-align:center">Sign Up</h1>
+    <p style="text-align:center;font-weight:bold" >Please fill in this form to create an account.</p>
+    <hr> 
+
+    <label for="FirstName"><b>First name</b></label>
+    <input type="text" placeholder="Enter first name" name="fname" required><br>
+
+    <label for="LastName"><b>Last name</b></label>
+    <input type="text" placeholder="Enter last name" name="lname" required><br>
+
+    <label for="email"><b>Email</b></label>
+    <input type="email" placeholder="Enter Email" name="email" required><br>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" id="pswd" required><br>
+
+    <label for="psw-repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat"  id="repswd" required>
+
+   
+
+    <div class="clearfix">
+      <button type="submit" class="signupbtn" onclick="validate()">Sign Up</button>
+    </div>
+    
+  </div>
+</form>
+  
+<script type="text/javascript">
+function Validate() {
+        var password = document.getElementById("pswd").value;
+        var confirmPassword = document.getElementById("repswd").value;
+        if (password === confirmPassword) {
+            location.href = "../HTML/landing.html";
+            
+        } 
+        else{
+            alert("Passwords do not match.");  
+        }
+        
+    }
+</script>
+
+
+</body>
+</html>
