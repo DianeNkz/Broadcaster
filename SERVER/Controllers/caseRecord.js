@@ -12,6 +12,7 @@ import validateCase from '../Controllers/validateCase';
         if(error) return res.status(400).send(error.details[0].message);
 
         var createdOn= new Date();
+        var status="draft";
         
         const id= cases.length  ;
         const casescreated={
@@ -20,7 +21,7 @@ import validateCase from '../Controllers/validateCase';
             createdBy: req.body.createdBy,
             title : req.body.title,
             type : req.body.type,
-            status: req.body.status,
+            status,
             location: req.body.location,
             description : req.body.description,
             attachment : req.body.attachment
@@ -71,7 +72,8 @@ import validateCase from '../Controllers/validateCase';
             
         }
         else{
-            res.status(201).json(one);
+            res.status(201).json(one),
+            message; 'case retrieved successfully'
             }
 
     }

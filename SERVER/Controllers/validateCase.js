@@ -9,7 +9,7 @@ const validateCase= (cases) => {
         createdBy: joi.number().required(),
         title : joi.string().required(),
         type : joi.string().required(),
-        status: joi.string().required(),
+        status: joi.string(),
         location: joi.string().required(),
         description : joi.string().required(),
         attachment : joi.string().required(),

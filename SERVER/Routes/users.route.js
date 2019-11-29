@@ -11,7 +11,7 @@ const router= express.Router();
 
 router.post('/api/V1/auth/userSignup', addUser);
 router.post('/api/V1/auth/userLogin/', login);
-router.post('/api/V1/case/newIncident/',  casefunction.createCase);
+router.post('/api/V1/case/newIncident/', casefunction.createCase);
 router.get('/api/V1/case/allIncident/', casefunction.allCases);
 router.get('/api/V1/case/specificIncident/:id', casefunction.specificCase);
 router.delete('/api/V1/case/deleteIncident/:id', casefunction.deleteCase);

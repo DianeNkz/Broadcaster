@@ -37,7 +37,7 @@ dotenv.config();
     res.status(201).json({
     status: 201, 
     message: 'user created succesfully',
-    data:userSchema
+    
     
  });
       }
