@@ -1,4 +1,4 @@
-
+[![Coverage Status](https://coveralls.io/repos/github/DianeNkz/Broadcaster/badge.svg?branch=develop)](https://coveralls.io/github/DianeNkz/Broadcaster?branch=develop)
 
 # Broadcaster
 
