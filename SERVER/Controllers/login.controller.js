@@ -1,8 +1,8 @@
-import userSchema from '../Models/users';
-//import  validatelogin from './validateLogin';
+
 import bcryptjs from 'bcryptjs';
 import jwt from "jsonwebtoken";
 import dotenv from 'dotenv';
+import userSchema from '../Models/users';
 
 dotenv.config();
 
@@ -42,7 +42,7 @@ const login= (req,res)=> {
         }
 
         const payload={
-            id: userfind.id,
+            
             email: userfind.email
         }
 

@@ -69,7 +69,7 @@ import  validateUser from  '../Controllers/validateUser';
         
         if(!edit ) {
             res.status(404).json({
-                status: 401,
+                status: 404,
                 message: 'The given id is not found'  
             });
             
